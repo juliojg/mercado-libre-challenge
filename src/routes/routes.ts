@@ -1,5 +1,5 @@
 import express from 'express';
-import controller from '../controllers/sample'
+import controller from '../controllers/ml_controller'
 
 const router = express();
 

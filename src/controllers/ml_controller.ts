@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import logging from '../config/logging';
 import axios from 'axios';
 
-const NAMESPACE = 'Sample Controller';
+const NAMESPACE = 'ML Controller';
 
 const sampleHealthCheck = (req: Request, res: Response, next: NextFunction) => {
   logging.info(NAMESPACE, `Sample health check route called.`);
@@ -20,7 +20,7 @@ const getItems = (req: Request, res: Response, next: NextFunction) => {
   axios.get(url)
     .then(response => {
       const resp: any = response;
-      res.status(200).json(resp['data']['results']);
+      res.status(200).json(resp['data']);
     })
     .catch(e => {
       console.log(e);

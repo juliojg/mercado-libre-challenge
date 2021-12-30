@@ -4,13 +4,25 @@ interface IArticle {
   body: string
 }
 
-type ArticleState = {
-  articles: IArticle[]
+interface Product {
+  id: number,
+  title: string
 }
 
-type ArticleAction = {
-  type: string
-  article: IArticle
+type GeneralState = {
+  articleState: ArticleState,
+  mercadolibreState: MercadoLibreState
 }
+
+type MercadoLibreState = {
+  mlProducts: Product[],
+}
+
+type MercadoLibreAction = {
+  type: string
+  payload: any
+}
+
+type
 
 type DispatchType = (args: ArticleAction) => ArticleAction
