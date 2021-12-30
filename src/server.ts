@@ -1,9 +1,9 @@
 import http from 'http';
 import express, { Router } from 'express';
 import bodyParser from 'body-parser';
-import logging from './config/logging';
-import config from './config/config';
-import sampleRoutes from './routes/routes';
+import logging from './Config/logging';
+import config from './Config/config';
+import endpoints from './Endpoints/endpoints';
 
 
 const NAMESPACE = 'Server';
@@ -48,7 +48,7 @@ router.use((req, res, next) => {
 
 /** Routes **/
 
-router.use('/sample', sampleRoutes);
+router.use('/sample', endpoints);
 
 /** Error Handling **/
 

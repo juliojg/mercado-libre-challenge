@@ -4,10 +4,10 @@ import { createStore, applyMiddleware, Store } from "redux"
 import { Provider } from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga'
-import sampleSaga from './store/Product/productSaga'
+import sampleSaga from './Store/Product/productSaga'
 
 import App from "./App"
-import reducer from "./store/Product/producReducer"
+import reducer from "./Store/Product/producReducer"
 
 const sagaMiddleware = createSagaMiddleware()
 

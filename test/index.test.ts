@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 
-import router from '../src/routes/routes';
+import router from '../src/Endpoints/endpoints';
 import {agent as request} from 'supertest';
 
 describe("Index Test", () => {

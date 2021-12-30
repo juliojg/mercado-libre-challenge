@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Search } from "./components/Search/Search"
-import { ProductList } from "./components/ProductList/ProductList"
+import { Search } from "./Components/Search/Search"
+import { ProductList } from "./Components/ProductList/ProductList"
 import { Paper } from "@material-ui/core"
 
 const App: React.FunctionComponent = () => {
