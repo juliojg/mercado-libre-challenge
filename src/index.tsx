@@ -5,9 +5,19 @@ import { Provider } from "react-redux"
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga'
 import sampleSaga from './Store/Product/productSaga'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes
+} from "react-router-dom";
 
 import App from "./App"
 import reducer from "./Store/Product/producReducer"
+import { ProductList } from "./Components/ProductList/ProductList";
+import { ProductDetail } from "./Components/ProductDetail/ProductDetail";
+import { DispatchType, MercadoLibreAction, MercadoLibreState } from "./type";
+import { Search } from "./Components/Search/Search";
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -22,7 +32,14 @@ sagaMiddleware.run(sampleSaga);
 const rootElement = document.getElementById("root")
 render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App>
+        <Routes>
+          <Route path={'/items'} element={<ProductList />} />
+          <Route path={'/items/:id'} element={<ProductDetail/>} />
+        </Routes>
+      </App>
+    </Router>
   </Provider>,
   rootElement
 )

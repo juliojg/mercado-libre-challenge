@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import logging from '../Config/logging';
 import axios from 'axios';
+import { Product } from '../Components/Product/Product';
+import { responseToProducts, responseToProductDetail } from "../Utils/productUtils"
 
 const NAMESPACE = 'ML Controller';
 
@@ -20,11 +22,32 @@ const getItems = (req: Request, res: Response, next: NextFunction) => {
   axios.get(url)
     .then(response => {
       const resp: any = response;
-      res.status(200).json(resp['data']);
+      res.status(200).json(responseToProducts(resp['data']));
     })
     .catch(e => {
       console.log(e);
     })
 };
 
-export default  { sampleHealthCheck, getItems };
+export const getItemDetailById = (req: Request, res: Response, next: NextFunction) => {
+  const param = req.params.id;
+  const url = `https://api.mercadolibre.com/items/${param}`;
+
+  logging.info(NAMESPACE, `Searching item with id: ${param}`);
+
+  axios.get(url + '/description')
+  .then(response => {
+    const resp: any = response;
+    const description = resp['data']['plain_text'];
+    axios.get(url)
+    .then(response => {
+      const resp: any = response;
+      res.status(200).json(responseToProductDetail(resp['data'], description));
+    })
+    .catch(e => {
+      console.log(e);
+    })
+  })
+};
+
+export default  { sampleHealthCheck, getItems, getItemDetailById };

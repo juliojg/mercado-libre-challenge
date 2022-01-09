@@ -7,5 +7,6 @@ endpoints.get('/ping', controller.sampleHealthCheck);
 
 endpoints.get('/api/items', controller.getItems)
 
+endpoints.get('/api/items/:id', controller.getItemDetailById)
 
 export default endpoints;

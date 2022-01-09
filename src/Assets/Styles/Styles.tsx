@@ -28,6 +28,31 @@ const searchStyles = makeStyles((theme) => createStyles({
     alignItems: 'center'
   },
 
+  productContainer: {
+    display: 'flex',
+    paddingTop: '20px'
+  },
+
+  productThumbnail: {
+    maxHeight: '150px',
+    maxWidth: '150px',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+
+  thumbnailSpace: {
+    height: '150px',
+    width: '150px'
+  },
+
+  productDataBox: {
+    paddingLeft: '20px'
+  },
+
+  shippingIcon: {
+    paddingLeft: '10px'
+  }
 }))
 
 export default searchStyles;

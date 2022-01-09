@@ -2,22 +2,26 @@ import * as React from "react"
 import { Box, Container, Typography } from "@material-ui/core"
 import searchStyles from "../../Assets/Styles/Styles";
 import ic_Shipping from "../../Assets/ic_shipping.png";
-import getSymbolFromCurrency from 'currency-symbol-map';
-import { Product as ProductType } from "../../type";
-
-type Props = {
-  product: ProductType,
-}
+import getSymbolFromCurrency from 'currency-symbol-map'
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 
-export const Product: React.FunctionComponent<Props> = ({ product }) => {
+
+
+export const ProductDetail: React.FunctionComponent<{}> = () => {
+
   const classesSearchStyles = searchStyles();
 
+  const { id } = useParams();
+
+  useEffect(() => {
+  }, [])
 
   return (
     <Container className={`${classesSearchStyles.productContainer}`}>
-      <Box className={`${classesSearchStyles.thumbnailSpace}`}>
-        <img src={product.picture} className={`${classesSearchStyles.productThumbnail}`}/>
+      {/* <Box className={`${classesSearchStyles.thumbnailSpace}`}>
+        <img src={product.picture}/>
       </Box>
       <Box className={`${classesSearchStyles.productDataBox}`}>
         <Box>
@@ -31,7 +35,7 @@ export const Product: React.FunctionComponent<Props> = ({ product }) => {
             {product.title}
           </Typography>
         </Box>
-      </Box>
+      </Box> */}
     </Container>
   )
 }

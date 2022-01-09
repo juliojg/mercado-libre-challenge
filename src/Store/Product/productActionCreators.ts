@@ -14,3 +14,17 @@ export function getProductsSucceed(response: object) {
     payload: response,
   }
 }
+
+export function getProductDetail(value: string) {
+  return {
+    type: productActionTypes.GET_PRODUCT_DETAIL,
+    payload: value,
+  }
+}
+
+export function getProductDetailSucceed(response: object) {
+  return {
+    type: productActionTypes.GET_PRODUCT_DETAIL_SUCCEEDED,
+    payload: response,
+  }
+}
