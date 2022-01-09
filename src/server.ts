@@ -48,7 +48,7 @@ router.use((req, res, next) => {
 
 /** Routes **/
 
-router.use('/sample', endpoints);
+router.use('/', endpoints);
 
 /** Error Handling **/
 

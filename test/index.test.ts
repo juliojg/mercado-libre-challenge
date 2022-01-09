@@ -9,12 +9,12 @@ describe("Index Test", () => {
     });
 });
 
-it('should GET /sample/ping', async function () {
+it('should GET /ping', async function () {
   const res = await request(router).get('/ping');
   expect(res.status).to.equal(200);
 });
 
-it('should GET /sample/api/items', async function () {
+it('should GET /api/items', async function () {
   const res = await request(router).get('/api/items').query({q: 'auto'});
   expect(res.status).to.equal(200);
   expect(res).not.to.be.empty;

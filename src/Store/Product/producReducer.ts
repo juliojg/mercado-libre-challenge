@@ -4,7 +4,8 @@ import * as productActionTypes from "./productActionTypes"
 
 const mercadolibreState: MercadoLibreState = {
   mlProducts: null,
-  currentProductDetail: null
+  currentProductDetail: null,
+  isFetching: false
 }
 
 const reducer = (
@@ -19,6 +20,10 @@ const reducer = (
     case productActionTypes.GET_PRODUCT_DETAIL_SUCCEEDED:
       return {...state,
         currentProductDetail: action.payload
+      }
+    case productActionTypes.IS_FETCHING:
+      return {...state,
+        isFetching: action.payload
       }
     }
   return state

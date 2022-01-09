@@ -46,7 +46,8 @@ export interface ProductDetails {
 
 type MercadoLibreState = {
   mlProducts: Products | null,
-  currentProductDetail: ProductDetails | null
+  currentProductDetail: ProductDetails | null,
+  isFetching: boolean
 }
 
 type MercadoLibreAction = {

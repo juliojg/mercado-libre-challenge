@@ -28,3 +28,10 @@ export function getProductDetailSucceed(response: object) {
     payload: response,
   }
 }
+
+export function isFetching(value: boolean) {
+  return {
+    type: productActionTypes.IS_FETCHING,
+    payload: value,
+  }
+}

@@ -11,10 +11,10 @@ export const responseToProductDetail: (rawResponse : any, description: string) =
         title: rawResponse['title'],
         price: {
           currency: rawResponse['currency_id'],
-          amount: rawResponse['prices'],
+          amount: rawResponse['price'],
           decimals: 0
         },
-        picture: rawResponse['thumbnail'],
+        picture: rawResponse['pictures'][0]['url'],
         condition: rawResponse['condition'],
         free_shipping: rawResponse['shipping']['free_shipping'],
         sold_quantity: rawResponse['sold_quantity'],

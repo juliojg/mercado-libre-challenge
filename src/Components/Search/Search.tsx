@@ -10,15 +10,15 @@ import { useNavigate } from 'react-router-dom';
 
 
 export const Search : React.FunctionComponent<{}> = () => {
-
-
-  const [searchValue, setSearchValue] = React.useState("");
-
+  // Styles
   const classesSearchStyles = searchStyles();
+
+  // State
+  const [searchValue, setSearchValue] = React.useState("");
 
   const navigate = useNavigate();
 
-  function handleClick() {
+  function handleSearch() {
     navigate('/items?search=' + searchValue);
   }
 
@@ -34,7 +34,7 @@ export const Search : React.FunctionComponent<{}> = () => {
                 onChange={e => setSearchValue(e.target.value)}
                 className={`${classesSearchStyles.inputSearch}`}
           />
-          <button className={`${classesSearchStyles.inputButton}`} onClick={ () => handleClick()}>
+          <button className={`${classesSearchStyles.inputButton}`} onClick={ () => handleSearch()}>
             <img src={ic_Search}/>
           </button>
         </Box>
