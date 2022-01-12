@@ -1,18 +1,16 @@
 import * as React from "react"
 import { Box, Container, Typography } from "@material-ui/core"
-import searchStyles from "../../Assets/Styles/Styles";
 import ic_Shipping from "../../Assets/ic_shipping.png";
 import getSymbolFromCurrency from 'currency-symbol-map';
 import { Product as ProductType } from "../../type";
 import { useNavigate } from "react-router-dom";
+import styles from './Product.module.css';
 
 type Props = {
   product: ProductType,
 }
 
 export const Product: React.FunctionComponent<Props> = ({ product }) => {
-  // Styles
-  const classesSearchStyles = searchStyles();
 
   const navigate = useNavigate();
 
@@ -21,15 +19,15 @@ export const Product: React.FunctionComponent<Props> = ({ product }) => {
   }
 
   return (
-    <Container className={`${classesSearchStyles.productContainer}`} onClick={goToDetail}>
-      <Box className={`${classesSearchStyles.thumbnailSpace}`}>
-        <img src={product.picture} className={`${classesSearchStyles.productThumbnail}`}/>
+    <Container className={styles.productContainer} onClick={goToDetail}>
+      <Box className={`${styles.thumbnailSpace}`}>
+        <img src={product.picture} className={`${styles.productThumbnail}`} alt="A product"/>
       </Box>
-      <Box className={`${classesSearchStyles.productDataBox}`}>
+      <Box className={`${styles.productDataBox}`}>
         <Box>
           <Typography variant="body1">
             {getSymbolFromCurrency(product.price.currency)}{product.price.amount}
-            {product.free_shipping && <img src={ic_Shipping} className={`${classesSearchStyles.shippingIcon}`}/>}
+            {product.free_shipping && <img src={ic_Shipping} className={`${styles.shippingIcon}`} alt="Can be shipped"/>}
           </Typography>
         </Box>
         <Box>

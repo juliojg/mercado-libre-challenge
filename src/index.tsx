@@ -12,15 +12,16 @@ import {
   Routes
 } from "react-router-dom";
 
-import reducer from "./Store/Product/producReducer"
+import reducer from "./Store/Product/productReducer"
 import { DispatchType, MercadoLibreAction, MercadoLibreState } from "./type";
 import { Suspense } from "react";
 import Loader from "./Components/Loader/Loader";
 
-const ProductList = React.lazy(() => import('./Components/ProductList/ProductList'));
-const ProductDetail = React.lazy(() => import('./Components/ProductDetail/ProductDetail'));
+const ProductList = React.lazy(() => import('./Containers/ProductList/ProductList'));
+const ProductDetailContainer = React.lazy(() => import('./Containers/ProductDetailContainer/ProductDetailContainer'));
 
 const sagaMiddleware = createSagaMiddleware()
+
 
 const store: Store<MercadoLibreState, MercadoLibreAction> & {
   dispatch: DispatchType
@@ -38,7 +39,7 @@ render(
             <Routes>
               <Route path={'/'} element={<></>}/>
               <Route path={'/items'} element={<ProductList />} />
-              <Route path={'/items/:id'} element={<ProductDetail/>} />
+              <Route path={'/items/:id'} element={<ProductDetailContainer />} />
             </Routes>
           </Suspense>
         </App>

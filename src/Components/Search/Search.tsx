@@ -1,17 +1,12 @@
 import React from "react";
-import { getProducts } from "../../Store/Product/productActionCreators"
-import { Dispatch } from "redux"
-import { useDispatch } from "react-redux"
 import ic_Search from "../../Assets/ic_Search.png"
 import Logo_ML from "../../Assets/Logo_ML.png"
 import { Container, Box } from "@material-ui/core"
-import searchStyles from "../../Assets/Styles/Styles";
 import { useNavigate } from 'react-router-dom';
+import styles from './Search.module.css'
 
 
 export const Search : React.FunctionComponent<{}> = () => {
-  // Styles
-  const classesSearchStyles = searchStyles();
 
   // State
   const [searchValue, setSearchValue] = React.useState("");
@@ -23,19 +18,19 @@ export const Search : React.FunctionComponent<{}> = () => {
   }
 
   return (
-    <Container maxWidth="xl" className={`${classesSearchStyles.containerClass}`}>
-      <Container className={`${classesSearchStyles.displaySearchBar} ${classesSearchStyles.containerClass}`}>
+    <Container maxWidth="xl" className={`${styles.containerClass}`}>
+      <Container className={`${styles.displaySearchBar} ${styles.containerClass}`}>
         <Box>
-          <img src={Logo_ML}/>
+          <img src={Logo_ML} alt="Mercado Libre logo"/>
         </Box>
         <Box m={2}>
           <input placeholder="Nunca dejes de buscar"
                 value={searchValue}
                 onChange={e => setSearchValue(e.target.value)}
-                className={`${classesSearchStyles.inputSearch}`}
+                className={`${styles.inputSearch}`}
           />
-          <button className={`${classesSearchStyles.inputButton}`} onClick={ () => handleSearch()}>
-            <img src={ic_Search}/>
+          <button className={`${styles.inputButton}`} onClick={ () => handleSearch()}>
+            <img src={ic_Search}  alt="Search button"/>
           </button>
         </Box>
       </Container>

@@ -35,3 +35,10 @@ export function isFetching(value: boolean) {
     payload: value,
   }
 }
+
+export function fetchError(value: boolean) {
+  return {
+    type: productActionTypes.FETCH_ERROR,
+    payload: value,
+  }
+}
