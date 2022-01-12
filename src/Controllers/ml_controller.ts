@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import logging from '../Config/logging';
 import axios from 'axios';
-import { Product } from '../Components/Product/Product';
 import { responseToProducts, responseToProductDetail } from "../Utils/productUtils"
 
 const NAMESPACE = 'ML Controller';

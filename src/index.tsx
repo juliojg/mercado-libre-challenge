@@ -22,7 +22,6 @@ const ProductDetail = React.lazy(() => import('./Components/ProductDetail/Produc
 
 const sagaMiddleware = createSagaMiddleware()
 
-
 const store: Store<MercadoLibreState, MercadoLibreAction> & {
   dispatch: DispatchType
 } = createStore(reducer, composeWithDevTools(

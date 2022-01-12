@@ -1,11 +1,9 @@
+import { currentAuthor } from "../Constants/Constants";
 import { ProductDetails, Products } from "../type"
 
 export const responseToProductDetail: (rawResponse : any, description: string) => ProductDetails = (rawResponse, description) => {
   return {
-    author: {
-      name: 'Julio Joaquín',
-      lastname: 'Güella'
-    },
+    author: currentAuthor,
     item: {
         id: rawResponse['id'],
         title: rawResponse['title'],
@@ -25,10 +23,7 @@ export const responseToProductDetail: (rawResponse : any, description: string) =
 
 export const responseToProducts: (rawResponse : any) => Products = (rawResponse) => {
   return {
-    author: {
-      name: 'Julio Joaquín',
-      lastname: 'Güella'
-    },
+    author: currentAuthor,
     categories: [...new Set<string>(rawResponse['results'].map((product : any) => product['category_id']))],
     items: rawResponse['results'].map((product : any) => {
       return {
