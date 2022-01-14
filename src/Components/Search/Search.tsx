@@ -28,6 +28,7 @@ export const Search : React.FunctionComponent<{}> = () => {
                 value={searchValue}
                 onChange={e => setSearchValue(e.target.value)}
                 className={`${styles.inputSearch}`}
+                onKeyPress={e => e.key === 'Enter' && handleSearch()}
           />
           <button className={`${styles.inputButton}`} onClick={ () => handleSearch()}>
             <img src={ic_Search}  alt="Search button"/>
