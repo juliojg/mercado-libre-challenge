@@ -24,7 +24,7 @@ const getItems = (req: Request, res: Response, next: NextFunction) => {
       res.status(200).json(responseToProducts(resp['data']));
     })
     .catch(e => {
-      console.log(e);
+      logging.error(NAMESPACE, `Error searching keyword: ${queryParam}`);
     })
 };
 
@@ -44,7 +44,7 @@ export const getItemDetailById = (req: Request, res: Response, next: NextFunctio
       res.status(200).json(responseToProductDetail(resp['data'], description));
     })
     .catch(e => {
-      console.log(e);
+      logging.error(NAMESPACE, `Error retrieving item with id: ${param}`);
     })
   })
 };
