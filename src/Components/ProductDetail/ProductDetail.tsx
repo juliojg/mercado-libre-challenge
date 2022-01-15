@@ -26,8 +26,8 @@ const ProductDetail: React.FunctionComponent<Props> = (props) => {
   return (
       <Container>
         <Container className={`${styles.productContainer}`}>
-          <Box style={{ paddingRight: "4vw" }}>
-            <img src={productDetails?.item.picture} alt="A product"/>
+          <Box>
+            <img src={productDetails?.item.picture} alt="A product" className={`${styles.productDetailImage}`}/>
           </Box>
           <Box className={`${styles.productDataBox}`}>
             <Box>

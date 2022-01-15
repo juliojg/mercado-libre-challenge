@@ -6,3 +6,8 @@
 .productDataBox {
   padding-left: 20px;
 }
+
+.productDetailImage {
+  margin-right: 4vw;
+  border-radius: 5px;
+}
