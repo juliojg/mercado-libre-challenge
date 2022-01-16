@@ -3,7 +3,7 @@ import ic_Search from "../../Assets/ic_Search.png"
 import Logo_ML from "../../Assets/Logo_ML.png"
 import { Container, Box } from "@material-ui/core"
 import { useNavigate } from 'react-router-dom';
-import styles from './Search.module.css'
+import styles from '../../Assets/Styles/Components/Search/Search.module.css'
 
 
 export const Search : React.FunctionComponent<{}> = () => {
@@ -26,6 +26,7 @@ export const Search : React.FunctionComponent<{}> = () => {
         <Box m={2}>
           <input placeholder="Nunca dejes de buscar"
                 value={searchValue}
+                autoFocus
                 onChange={e => setSearchValue(e.target.value)}
                 className={`${styles.inputSearch}`}
                 onKeyPress={e => e.key === 'Enter' && handleSearch()}

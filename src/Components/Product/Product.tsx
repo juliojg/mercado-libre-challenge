@@ -4,7 +4,7 @@ import ic_Shipping from "../../Assets/ic_shipping.png";
 import getSymbolFromCurrency from 'currency-symbol-map';
 import { Product as ProductType } from "../../type";
 import { useNavigate } from "react-router-dom";
-import styles from './Product.module.css';
+import styles from '../../Assets/Styles/Components/Product/Product.module.css';
 
 type Props = {
   product: ProductType,
@@ -31,8 +31,8 @@ export const Product: React.FunctionComponent<Props> = ({ product }) => {
           </Typography>
         </Box>
         <Box>
-          <Typography variant="body2">
-            {product.title}
+          <Typography variant="body2" tabIndex={0} onKeyPress={e => e.key === 'Enter' && goToDetail()}>
+              {product.title}
           </Typography>
         </Box>
       </Box>

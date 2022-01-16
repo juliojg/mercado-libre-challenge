@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Box, Button, Container, Typography } from "@material-ui/core"
 import getSymbolFromCurrency from 'currency-symbol-map'
-import styles from './ProductDetail.module.css';
+import styles from '../../Assets/Styles/Components/ProductDetail/ProductDetail.module.css';
 import { ProductDetails } from "../../type";
 
 type Props = {
