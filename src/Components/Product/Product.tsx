@@ -25,13 +25,13 @@ export const Product: React.FunctionComponent<Props> = ({ product }) => {
       </Box>
       <Box className={`${styles.productDataBox}`}>
         <Box>
-          <Typography variant="body1">
+          <Typography variant="body1" className={styles.currency}>
             {getSymbolFromCurrency(product.price.currency)}{product.price.amount}
             {product.free_shipping && <img src={ic_Shipping} className={`${styles.shippingIcon}`} alt="Can be shipped"/>}
           </Typography>
         </Box>
         <Box>
-          <Typography variant="body2" tabIndex={0} onKeyPress={e => e.key === 'Enter' && goToDetail()}>
+          <Typography className={styles.title} variant="body2" tabIndex={0} onKeyPress={e => e.key === 'Enter' && goToDetail()}>
               {product.title}
           </Typography>
         </Box>

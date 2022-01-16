@@ -7,6 +7,7 @@ import { useParams, useSearchParams } from "react-router-dom"
 import { getProducts } from "../../Store/Product/productActionCreators"
 import { Dispatch } from "redux"
 import Loader from "../Loader/Loader"
+import styles from "../../Assets/Styles/Components/ProductList/ProductList.module.css"
 
 const ProductList: React.FunctionComponent = () => {
   // Selectors

@@ -26,21 +26,23 @@ const ProductDetail: React.FunctionComponent<Props> = (props) => {
   return (
       <Container>
         <Container className={`${styles.productContainer}`}>
-          <Box>
-            <img src={productDetails?.item.picture} alt="A product" className={`${styles.productDetailImage}`}/>
-          </Box>
-          <Box className={`${styles.productDataBox}`}>
+          <Box className={`${styles.productDetailImageContainer}`}>
             <Box>
-              <Typography variant="body1" style={{ fontSize: 12  }}>
+              <img src={productDetails?.item.picture} alt="A product" className={`${styles.productDetailImage}`}/>
+            </Box>
+          </Box>
+          <Box>
+            <Box>
+              <Typography variant="body1" style={{ fontSize: 14, paddingBottom: 16 }}>
                 {productDetails && conditionParser(productDetails.item.condition)} {productDetails?.item.sold_quantity} vendidos
               </Typography>
               <Box style={{maxWidth: "fit-content"}}>
-                <Typography variant="body2" style={{ fontWeight: 600, fontSize: 16  }}>
+                <Typography variant="body2" style={{ fontWeight: 600, fontSize: 24, paddingBottom: 32}}>
                   {productDetails?.item.title}
                 </Typography>
               </Box>
-              <Typography variant="body1" style={{ fontWeight: 500, fontSize: 26 }}>
-                {productDetails && getSymbolFromCurrency(productDetails.item.price.currency)}{productDetails?.item.price.amount}
+              <Typography variant="body1" style={{ fontWeight: 500, fontSize: 46, paddingBottom: 32 }}>
+                {productDetails && getSymbolFromCurrency(productDetails.item.price.currency)} {productDetails?.item.price.amount}
               </Typography>
               <br/>
               <Button variant="contained" size="large" style={{backgroundColor: "dodgerblue", color: "white"}}> Comprar </Button>
@@ -53,7 +55,7 @@ const ProductDetail: React.FunctionComponent<Props> = (props) => {
             Descripción del producto
           </Typography>
           <br/>
-          <Typography variant="body2" style={{color: "grey"}}>
+          <Typography variant="body2" style={{color: "grey", paddingTop: 32, paddingBottom: 32}}>
             {productDetails?.item.description}
           </Typography>
         </Box>

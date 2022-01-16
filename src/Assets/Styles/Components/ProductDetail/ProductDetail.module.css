@@ -1,0 +1,14 @@
+.productContainer {
+  display: flex;
+  padding-top: 32px;
+}
+
+.productDetailImage {
+  margin-right: 4vw;
+  border-radius: 5px;
+  max-width: 680px;
+}
+
+.productDetailImageContainer {
+  width: 680px;
+}
